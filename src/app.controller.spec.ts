@@ -15,10 +15,6 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello Assurity!"', () => {
-      expect(appController.getHello()).toBe('Hello Assurity!');
-    });
-
     it('name should be carbon credits', async () => {
       const response = await appController.testData();
       expect(response.data.Name).toBe('Carbon credits');
@@ -29,7 +25,7 @@ describe('AppController', () => {
       expect(response.data.CanRelist).toBe(true);
     });
 
-    it('canRelist should be true', async () => {
+    it('should return the promotion with the name Gallery and the description Good position in category', async () => {
       const response = await appController.testData();
       const promotions: Array<any> = response.data.Promotions;
 
