@@ -19,10 +19,25 @@ describe('AppController', () => {
       expect(appController.getHello()).toBe('Hello Assurity!');
     });
 
-    it('should return test data', async () => {
+    it('name should be carbon credits', async () => {
       const response = await appController.testData();
-      console.log(response);
-      expect(true).toBe(true);
+      expect(response.data.Name).toBe('Carbon credits');
+    });
+
+    it('canRelist should be true', async () => {
+      const response = await appController.testData();
+      expect(response.data.CanRelist).toBe(true);
+    });
+
+    it('canRelist should be true', async () => {
+      const response = await appController.testData();
+      const promotions: Array<any> = response.data.Promotions;
+
+      const gallery: any = promotions.find((promotion) => {
+        return promotion.Name === 'Gallery';
+      });
+      expect(gallery.Name).toBe('Gallery');
+      expect(gallery.Description).toBe('Good position in category');
     });
   });
 });
