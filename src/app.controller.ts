@@ -9,7 +9,8 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
-  testFunction(): string {
-    return this.appService.testFunction();
+  @Get()
+  testData(): any {
+    return this.appService.testData();
   }
 }

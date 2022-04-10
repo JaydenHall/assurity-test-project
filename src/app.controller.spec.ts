@@ -19,8 +19,10 @@ describe('AppController', () => {
       expect(appController.getHello()).toBe('Hello Assurity!');
     });
 
-    it('should return the test', () => {
-      expect(appController.testFunction()).toBe('test');
+    it('should return test data', async () => {
+      const response = await appController.testData();
+      console.log(response);
+      expect(true).toBe(true);
     });
   });
 });
